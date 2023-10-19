@@ -1,0 +1,22 @@
+
+// Get references to the HTML elements
+const counterElement = document.getElementById("counter");
+const incrementButton = document.getElementById("incrementButton");
+const decrementButton = document.getElementById("decrementButton");
+
+// Initialize the counter value
+let counterValue = 0;
+counterElement.textContent = counterValue;
+
+// Event listener for the Increment button
+incrementButton.addEventListener("click", function () {
+  counterValue++;
+  counterElement.textContent = counterValue;
+});
+
+// Event listener for the Decrement button
+decrementButton.addEventListener("click", function () {
+  counterValue--;
+  counterElement.textContent = counterValue;
+});
+

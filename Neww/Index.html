@@ -1,16 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum Counter</title>
+</head>
+<body>
+    <h1>Sum Counter</h1>
+    <p>Current Sum: <span id="sumDisplay">0</span></p>
+    <button id="addButton">Add 1</button>
+    <button id="subtract">subtract</button>
 
-// Get references to the HTML elements
-const counterElement = document.getElementById("counter");
-const incrementButton = document.getElementById("incrementButton");
-const decrementButton = document.getElementById("decrementButton");
+    <script>
+      
+        let sum = 0; 
 
-// Initialize the counter value
-let counterValue = 0;
-counterElement.textContent = counterValue;
+        
+        function addOne() {
+            sum++;
+            updateDisplay();
+        }
+        function subtract() {
+            sum--;
+            updateDisplay();
+        }
 
-// Event listener for the Increment button
-incrementButton.addEventListener("click", function () {
-  counterValue++;
-  counterElement.textContent = counterValue;
-});
+       
+        function updateDisplay() {
+            document.getElementById("sumDisplay").textContent = sum;
+        }
 
+        document.getElementById("addButton").addEventListener("click", addOne);
+        document.getElementById("subtract").addEventListener("click", subtract);
+
+        updateDisplay();
+    </script>
+</body>
+</html>
